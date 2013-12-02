@@ -1,6 +1,5 @@
 package com.pk.chemhelp;
 
-import gaslaws.GasLaws;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,6 +18,7 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
+import com.pk.chemhelp.gaslaws.GasLaws;
 
 public class CombinedGasLaw extends SherlockActivity
 {

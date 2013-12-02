@@ -9,9 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import gaslaws.GasLawsItem;
 
 import java.util.List;
+
+import com.pk.chemhelp.gaslaws.GasLawsItem;
 
 public class SavedQuizAdapter extends BaseAdapter implements OnClickListener
 {

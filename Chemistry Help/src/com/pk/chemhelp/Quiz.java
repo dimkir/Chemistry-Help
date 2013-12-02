@@ -14,13 +14,13 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
+import com.pk.chemhelp.gaslaws.laws.BoylesLaw;
+import com.pk.chemhelp.gaslaws.laws.CharlesLaw;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import laws.BoylesLaw;
-import laws.CharlesLaw;
 
 public class Quiz extends SherlockActivity
 {

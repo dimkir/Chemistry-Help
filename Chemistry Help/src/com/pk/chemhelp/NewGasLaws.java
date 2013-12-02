@@ -17,15 +17,15 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.pk.chemhelp.gaslaws.laws.BoylesLaw;
+import com.pk.chemhelp.gaslaws.laws.CharlesLaw;
+import com.pk.chemhelp.gaslaws.laws.GayLussacsLaw;
+import com.pk.chemhelp.gaslaws.laws.IdealGasLaw;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-import laws.BoylesLaw;
-import laws.CharlesLaw;
-import laws.GayLussacsLaw;
-import laws.IdealGasLaw;
 
 public class NewGasLaws extends SherlockFragmentActivity
 {

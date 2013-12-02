@@ -1,4 +1,4 @@
-package gaslaws;
+package com.pk.chemhelp.gaslaws;
 
 public interface GasConstants {
 	public static final String SID_COMBINED = "combined";

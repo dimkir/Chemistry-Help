@@ -1,4 +1,4 @@
-package laws;
+package com.pk.chemhelp.gaslaws.laws;
 
 /**
  * This interface contains "head" information about specific gas law.

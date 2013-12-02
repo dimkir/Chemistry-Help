@@ -1,18 +1,19 @@
-package gaslaws;
+package com.pk.chemhelp.gaslaws;
 
-import android.content.Context;
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.Toast;
+
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -27,19 +28,10 @@ import com.pk.chemhelp.Dialogs;
 import com.pk.chemhelp.MySingleton;
 import com.pk.chemhelp.R;
 import com.pk.chemhelp.Settings;
-import com.pk.chemhelp.R.anim;
-import com.pk.chemhelp.R.drawable;
-import com.pk.chemhelp.R.id;
-import com.pk.chemhelp.R.layout;
-import com.pk.chemhelp.R.menu;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import laws.BoylesLaw;
-import laws.CharlesLaw;
-import laws.GayLussacsLaw;
-import laws.IdealGasLaw;
+import com.pk.chemhelp.gaslaws.laws.BoylesLaw;
+import com.pk.chemhelp.gaslaws.laws.CharlesLaw;
+import com.pk.chemhelp.gaslaws.laws.GayLussacsLaw;
+import com.pk.chemhelp.gaslaws.laws.IdealGasLaw;
 
 public class GasLaws extends SherlockActivity
 implements GasConstants
@@ -47,6 +39,7 @@ implements GasConstants
 
 	
 	
+	private static final String C_BUNDLE_KEY__PAGE_VALUES = "Page Values";
 	private boolean Exit;
 	final String PageID = "Gas Laws";
 	//Bookmark BookmarkMethod;
@@ -54,6 +47,7 @@ implements GasConstants
 	int numBookmarks;
 	
 	/* Bookmarks */
+	// XXX: what's that?
 	String[] pageValues;
 	
 	/* Backport Overflow Menu Workaround */
@@ -77,7 +71,9 @@ implements GasConstants
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		
 		Bundle extraBundle;
-		Intent intentValues = getIntent();
+		Intent callerIntent = getIntent();
+		
+		//TODO: this looks dangerous: declaring array with numeric literal.
 		pageValues = new String[50];
 
 		numBookmarks = MySingleton.getInstance().getNumBookmarks();
@@ -88,7 +84,8 @@ implements GasConstants
 		
 		// Menu Items
 		final List<GasLawsItem> listOfItems = new ArrayList<GasLawsItem>();
-		listOfItems.add(new GasLawsItem(LAWS_BOYLE_S_LAW, FORMULAS_BOYL_S_P1V1_P2V2, SID_BOYLES));
+//		listOfItems.add(new GasLawsItem(LAWS_BOYLE_S_LAW, FORMULAS_BOYL_S_P1V1_P2V2, SID_BOYLES));
+		listOfItems.add(new GasLawsItem(BoylesLaw.class));
 		listOfItems.add(new GasLawsItem(LAWS_CHARLE_S_LAW, FORMULAS_CHARLES_V1_T1_V2_T2, SID_CHARLES));
 		listOfItems.add(new GasLawsItem(LAWS_GAY_LUSSAC_S_LAW, FORMULAS_GAY_LUSSAC_P1T2_P2T1, SID_GAY));
 		listOfItems.add(new GasLawsItem(LAWS_IDEAL_GAS_LAW, FORMULAS_IDEAL_GAS_PV_N_RT, SID_IDEAL));
@@ -107,21 +104,23 @@ implements GasConstants
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int position, long index)
 			{
-				System.out.println("sadsfsf");
-				String ID = listOfItems.get(position).getIcon();
-				Intent selectedLaw;
-				if (ID.equals(SID_BOYLES))
-					selectedLaw = new Intent(GasLaws.this, BoylesLaw.class);
-				else if (ID.equals(SID_CHARLES))
-					selectedLaw = new Intent(GasLaws.this, CharlesLaw.class);
-				else if (ID.equals(SID_IDEAL))
-					selectedLaw = new Intent(GasLaws.this, IdealGasLaw.class);
-				else if (ID.equals(SID_GAY))
-					selectedLaw = new Intent(GasLaws.this, GayLussacsLaw.class);
-				else if (ID.equals(SID_COMBINED))
-					selectedLaw = new Intent(GasLaws.this, CombinedGasLaw.class);
-				else
-					selectedLaw = new Intent(GasLaws.this, ChemistryHelp.class);
+				GasLawsItem item = listOfItems.get(position);
+//				String ID = listOfItems.get(position).getIcon();
+				Intent selectedLaw = new Intent(GasLaws.this, item.getActivityClass() );
+				
+//				if (ID.equals(SID_BOYLES))
+//					selectedLaw = new Intent(GasLaws.this, BoylesLaw.class);
+//				else if (ID.equals(SID_CHARLES))
+//					selectedLaw = new Intent(GasLaws.this, CharlesLaw.class);
+//				else if (ID.equals(SID_IDEAL))
+//					selectedLaw = new Intent(GasLaws.this, IdealGasLaw.class);
+//				else if (ID.equals(SID_GAY))
+//					selectedLaw = new Intent(GasLaws.this, GayLussacsLaw.class);
+//				else if (ID.equals(SID_COMBINED))
+//					selectedLaw = new Intent(GasLaws.this, CombinedGasLaw.class);
+//				else
+//					selectedLaw = new Intent(GasLaws.this, ChemistryHelp.class);
+				
 				startActivity(selectedLaw);
 				//showToast(listOfItems.get(position).getItemName());
 			}
@@ -129,10 +128,10 @@ implements GasConstants
 		
 		list.setAdapter(adapter);
 		
-		if(intentValues.hasExtra("Page Values"))
+		if(callerIntent.hasExtra(C_BUNDLE_KEY__PAGE_VALUES))
 		{
 			extraBundle = getIntent().getExtras();
-			pageValues = extraBundle.getStringArray("Page Values");
+			pageValues = extraBundle.getStringArray(C_BUNDLE_KEY__PAGE_VALUES);
 
 			setPageValues();
 		}
@@ -249,6 +248,10 @@ implements GasConstants
 		return values;
 	}
 
+	/**
+	 * This method doesn't do anything.
+	 * @deprecated this method doesn't do anything, it's empty.
+	 */
 	public void setPageValues()
 	{
 		if(pageValues[0].equals(PageID))
@@ -267,84 +270,5 @@ implements GasConstants
 		Exit = true;
 		MySingleton.getInstance().setExit(Exit);
 		finish();
-	}
-	
-	public class GasLawsAdapter extends BaseAdapter implements OnClickListener
-	{
-		private Context context;
-
-		private List<GasLawsItem> listItem;
-
-		public GasLawsAdapter(Context context, List<GasLawsItem> listItem)
-		{
-			this.context = context;
-			this.listItem = listItem;
-		}
-
-		public int getCount()
-		{
-			return listItem.size();
-		}
-
-		public Object getItem(int position)
-		{
-			return listItem.get(position);
-		}
-
-		public long getItemId(int position)
-		{
-			return position;
-		}
-
-		public View getView(int position, View convertView, ViewGroup viewGroup)
-		{
-			GasLawsItem entry = listItem.get(position);
-			if (convertView == null)
-			{
-				LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				convertView = inflater.inflate(R.layout.gaslaws_row, null);
-			}
-
-			ImageView iconImage = (ImageView) convertView.findViewById(R.id.imageView1);
-			String icon = entry.getIcon();
-			if (icon.equals(SID_BOYLES))
-				iconImage.setImageResource(R.drawable.boyles_icon);
-			else if (icon.equals(SID_CHARLES))
-				iconImage.setImageResource(R.drawable.charles_icon);
-			else if (icon.equals(SID_IDEAL))
-				iconImage.setImageResource(R.drawable.ideal_icon);
-			else if (icon.equals(SID_GAY))
-				iconImage.setImageResource(R.drawable.lussac_icon);
-			else if (icon.equals(SID_COMBINED))
-				iconImage.setImageResource(R.drawable.combined_icon);
-
-			TextView Item = (TextView) convertView.findViewById(R.id.Item);
-			Item.setText(entry.getItemName());
-
-			TextView Description = (TextView) convertView.findViewById(R.id.Description);
-			if(entry.getDescription().equals(FORMULAS_BOYL_S_P1V1_P2V2))
-				Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>"));
-			else if(entry.getDescription().equals(FORMULAS_CHARLES_V1_T1_V2_T2))
-				Description.setText(Html.fromHtml("V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
-			else if(entry.getDescription().equals(FORMULAS_GAY_LUSSAC_P1T2_P2T1))
-				Description.setText(Html.fromHtml("P<sub><small>1</small></sub>T<sub><small>2</small></sub> = P<sub><small>2</small></sub>T<sub><small>1</small></sub>"));
-			else if(entry.getDescription().equals(FORMULAS_IDEAL_GAS_PV_N_RT))
-				Description.setText(Html.fromHtml(FORMULAS_IDEAL_GAS_PV_N_RT));
-			else if(entry.getDescription().equals(FORMUILAS_COMBINED_P1V1_T1_P2V2_T2))
-				Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
-			else
-				Description.setText(entry.getDescription());
-
-			return convertView;
-		}
-
-		@Override
-		public void onClick(View view)
-		{
-			GasLawsItem entry = (GasLawsItem) view.getTag();
-			listItem.remove(entry);
-			notifyDataSetChanged();
-
-		}
 	}
 }

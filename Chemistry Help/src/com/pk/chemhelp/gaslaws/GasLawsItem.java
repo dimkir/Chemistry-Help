@@ -1,7 +1,9 @@
-package gaslaws;
+package com.pk.chemhelp.gaslaws;
 
-import laws.BoylesLaw;
-import laws.IGLHead;
+import com.pk.chemhelp.gaslaws.laws.BoylesLaw;
+import com.pk.chemhelp.gaslaws.laws.IGLHead;
+
+import android.app.Activity;
 
 public class GasLawsItem
 {
@@ -13,6 +15,7 @@ public class GasLawsItem
 	 */
 	private String icon;
 	private int iconId;
+	private Class<? extends Activity> class1;
 	
 	public GasLawsItem(IGLHead head){
 		this.item = head.getLawTitle();
@@ -32,8 +35,9 @@ public class GasLawsItem
 	}
 	
 	
-	public GasLawsItem(Class<BoylesLaw> class1) {
+	public GasLawsItem(Class<? extends Activity> class1) {
 		// TODO Auto-generated constructor stub
+		this.class1 = class1;
 	}
 
 
@@ -77,5 +81,10 @@ public class GasLawsItem
 	
 	public int getIconId(){
 		return this.iconId;
+	}
+
+
+	public Class<? extends Activity> getActivityClass() {
+		return this.class1;
 	}
 }

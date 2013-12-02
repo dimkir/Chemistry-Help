@@ -14,16 +14,16 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
+import com.pk.chemhelp.gaslaws.GasLaws;
+import com.pk.chemhelp.gaslaws.laws.BoylesLaw;
+import com.pk.chemhelp.gaslaws.laws.CharlesLaw;
+import com.pk.chemhelp.gaslaws.laws.GayLussacsLaw;
+import com.pk.chemhelp.gaslaws.laws.IdealGasLaw;
 
-import gaslaws.GasLaws;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import laws.BoylesLaw;
-import laws.CharlesLaw;
-import laws.GayLussacsLaw;
-import laws.IdealGasLaw;
 
 public class Settings extends SherlockActivity
 {

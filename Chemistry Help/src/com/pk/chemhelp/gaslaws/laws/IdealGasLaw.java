@@ -1,6 +1,5 @@
-package laws;
+package com.pk.chemhelp.gaslaws.laws;
 
-import gaslaws.GasLaws;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -34,6 +33,7 @@ import com.pk.chemhelp.R.id;
 import com.pk.chemhelp.R.layout;
 import com.pk.chemhelp.R.menu;
 import com.pk.chemhelp.R.string;
+import com.pk.chemhelp.gaslaws.GasLaws;
 
 public class IdealGasLaw extends SherlockActivity
 {
