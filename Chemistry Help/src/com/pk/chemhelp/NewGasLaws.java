@@ -18,6 +18,11 @@ import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
 
+import gaslaws.BoylesLaw;
+import gaslaws.CharlesLaw;
+import gaslaws.GayLussacsLaw;
+import gaslaws.IdealGasLaw;
+
 import java.util.ArrayList;
 import java.util.List;
 

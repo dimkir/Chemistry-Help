@@ -1,4 +1,4 @@
-package com.pk.chemhelp;
+package gaslaws;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +19,19 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
+import com.pk.chemhelp.Bookmark;
+import com.pk.chemhelp.ChemistryHelp;
+import com.pk.chemhelp.CombinedGasLaw;
+import com.pk.chemhelp.Debug;
+import com.pk.chemhelp.Dialogs;
+import com.pk.chemhelp.MySingleton;
+import com.pk.chemhelp.R;
+import com.pk.chemhelp.Settings;
+import com.pk.chemhelp.R.anim;
+import com.pk.chemhelp.R.drawable;
+import com.pk.chemhelp.R.id;
+import com.pk.chemhelp.R.layout;
+import com.pk.chemhelp.R.menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +40,7 @@ public class GasLaws extends SherlockActivity
 {
 	private boolean Exit;
 	final String PageID = "Gas Laws";
-	Bookmark BookmarkMethod;
+	//Bookmark BookmarkMethod;
 	Bookmark[] Bookmarks;
 	int numBookmarks;
 	

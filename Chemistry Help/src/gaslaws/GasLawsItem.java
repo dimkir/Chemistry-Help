@@ -1,4 +1,4 @@
-package com.pk.chemhelp;
+package gaslaws;
 
 public class GasLawsItem
 {

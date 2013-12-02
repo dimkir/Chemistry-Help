@@ -15,6 +15,9 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
 
+import gaslaws.BoylesLaw;
+import gaslaws.CharlesLaw;
+
 import java.util.ArrayList;
 import java.util.List;
 

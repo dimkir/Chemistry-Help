@@ -1,6 +1,11 @@
-package com.pk.chemhelp;
+package gaslaws;
 
 import java.util.List;
+
+import com.pk.chemhelp.R;
+import com.pk.chemhelp.R.drawable;
+import com.pk.chemhelp.R.id;
+import com.pk.chemhelp.R.layout;
 
 import android.content.Context;
 import android.text.Html;

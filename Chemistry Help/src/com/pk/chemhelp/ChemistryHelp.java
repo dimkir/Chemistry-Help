@@ -1,5 +1,7 @@
 package com.pk.chemhelp;
 
+import gaslaws.GasLaws;
+
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.net.URL;

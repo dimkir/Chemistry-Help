@@ -32,23 +32,23 @@
             </intent-filter>
         </activity>
         <activity
-        	android:name=".GasLaws"
+        	android:name="gaslaws.GasLaws"
         	android:label="Gas Laws">
         </activity>
         <activity
-        	android:name=".BoylesLaw"
+        	android:name="gaslaws.BoylesLaw"
         	android:label="Boyle's Law">
         </activity>
         <activity
-        	android:name=".CharlesLaw"
+        	android:name="gaslaws.CharlesLaw"
         	android:label="Charles' Law">
         </activity>
         <activity
-        	android:name=".IdealGasLaw"
+        	android:name="gaslaws.IdealGasLaw"
         	android:label="Ideal Gas Law">
         </activity>
 		<activity
-			android:name=".GayLussacsLaw"
+			android:name="gaslaws.GayLussacsLaw"
 			android:label="Gay Lussac's Law">
 		</activity>
 		<activity
