@@ -36,15 +36,15 @@
         	android:label="Gas Laws">
         </activity>
         <activity
-        	android:name="gaslaws.BoylesLaw"
+        	android:name="laws.BoylesLaw"
         	android:label="Boyle's Law">
         </activity>
         <activity
-        	android:name="gaslaws.CharlesLaw"
+        	android:name="gaslaws.CharlesLaw"       	
         	android:label="Charles' Law">
         </activity>
         <activity
-        	android:name="gaslaws.IdealGasLaw"
+        	android:name="laws.IdealGasLaw"
         	android:label="Ideal Gas Law">
         </activity>
 		<activity
