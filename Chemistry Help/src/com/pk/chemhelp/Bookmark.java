@@ -1,10 +1,10 @@
 package com.pk.chemhelp;
 
-import gaslaws.BoylesLaw;
-import gaslaws.CharlesLaw;
+import laws.BoylesLaw;
+import laws.CharlesLaw;
+import laws.GayLussacsLaw;
+import laws.IdealGasLaw;
 import gaslaws.GasLaws;
-import gaslaws.GayLussacsLaw;
-import gaslaws.IdealGasLaw;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

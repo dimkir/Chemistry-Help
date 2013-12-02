@@ -15,11 +15,12 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
 
-import gaslaws.BoylesLaw;
-import gaslaws.CharlesLaw;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import laws.BoylesLaw;
+import laws.CharlesLaw;
 
 public class Quiz extends SherlockActivity
 {

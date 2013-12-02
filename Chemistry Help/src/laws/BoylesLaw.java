@@ -1,5 +1,7 @@
-package gaslaws;
+package laws;
 
+import gaslaws.GasConstants;
+import gaslaws.GasLaws;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -36,6 +38,7 @@ import com.pk.chemhelp.R.menu;
 import com.pk.chemhelp.R.string;
 
 public class BoylesLaw extends SherlockActivity
+implements IGLHead, GasConstants
 {
 	/* Important Objects for Referencing and Problem Solving */
 	protected DataStorage appState;
@@ -1037,4 +1040,27 @@ public class BoylesLaw extends SherlockActivity
 		MySingleton.getInstance().setExit(Exit);
 		finish();
 	}
+	
+	
+	@Override
+	public String getLawTitle(){
+		return LAWS_BOYLE_S_LAW; 
+	}
+
+	@Override
+	public String getLawDescription() {
+		return FORMULAS_BOYL_S_P1V1_P2V2;
+	}
+
+	@Override
+	public String getLawIconString() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("not implemented, and not clear what it should return");
+	}
+
+	@Override
+	public int getLawIconId() {
+		return R.drawable.boyles_icon;
+	}
+	
 }

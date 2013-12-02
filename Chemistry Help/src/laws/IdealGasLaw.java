@@ -1,5 +1,6 @@
-package gaslaws;
+package laws;
 
+import gaslaws.GasLaws;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;

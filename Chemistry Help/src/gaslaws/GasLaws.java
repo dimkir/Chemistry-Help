@@ -36,8 +36,17 @@ import com.pk.chemhelp.R.menu;
 import java.util.ArrayList;
 import java.util.List;
 
+import laws.BoylesLaw;
+import laws.CharlesLaw;
+import laws.GayLussacsLaw;
+import laws.IdealGasLaw;
+
 public class GasLaws extends SherlockActivity
+implements GasConstants
 {
+
+	
+	
 	private boolean Exit;
 	final String PageID = "Gas Laws";
 	//Bookmark BookmarkMethod;
@@ -79,11 +88,11 @@ public class GasLaws extends SherlockActivity
 		
 		// Menu Items
 		final List<GasLawsItem> listOfItems = new ArrayList<GasLawsItem>();
-		listOfItems.add(new GasLawsItem("Boyle's Law", "P1V1 = P2V2", "boyles"));
-		listOfItems.add(new GasLawsItem("Charle's Law", "V1/T1 = V2/T2", "charles"));
-		listOfItems.add(new GasLawsItem("Gay Lussac's Law", "P1T2 = P2T1", "gay"));
-		listOfItems.add(new GasLawsItem("Ideal Gas Law", "PV = nRT", "ideal"));
-		listOfItems.add(new GasLawsItem("Combined Gas Law", "P1V1/T1 = P2V2/T2", "combined"));
+		listOfItems.add(new GasLawsItem(LAWS_BOYLE_S_LAW, FORMULAS_BOYL_S_P1V1_P2V2, SID_BOYLES));
+		listOfItems.add(new GasLawsItem(LAWS_CHARLE_S_LAW, FORMULAS_CHARLES_V1_T1_V2_T2, SID_CHARLES));
+		listOfItems.add(new GasLawsItem(LAWS_GAY_LUSSAC_S_LAW, FORMULAS_GAY_LUSSAC_P1T2_P2T1, SID_GAY));
+		listOfItems.add(new GasLawsItem(LAWS_IDEAL_GAS_LAW, FORMULAS_IDEAL_GAS_PV_N_RT, SID_IDEAL));
+		listOfItems.add(new GasLawsItem(LAWS_COMBINED_GAS_LAW, FORMUILAS_COMBINED_P1V1_T1_P2V2_T2, SID_COMBINED));
 		
 		GasLawsAdapter adapter = new GasLawsAdapter(this, listOfItems);
 		
@@ -101,15 +110,15 @@ public class GasLaws extends SherlockActivity
 				System.out.println("sadsfsf");
 				String ID = listOfItems.get(position).getIcon();
 				Intent selectedLaw;
-				if (ID.equals("boyles"))
+				if (ID.equals(SID_BOYLES))
 					selectedLaw = new Intent(GasLaws.this, BoylesLaw.class);
-				else if (ID.equals("charles"))
+				else if (ID.equals(SID_CHARLES))
 					selectedLaw = new Intent(GasLaws.this, CharlesLaw.class);
-				else if (ID.equals("ideal"))
+				else if (ID.equals(SID_IDEAL))
 					selectedLaw = new Intent(GasLaws.this, IdealGasLaw.class);
-				else if (ID.equals("gay"))
+				else if (ID.equals(SID_GAY))
 					selectedLaw = new Intent(GasLaws.this, GayLussacsLaw.class);
-				else if (ID.equals("combined"))
+				else if (ID.equals(SID_COMBINED))
 					selectedLaw = new Intent(GasLaws.this, CombinedGasLaw.class);
 				else
 					selectedLaw = new Intent(GasLaws.this, ChemistryHelp.class);
@@ -298,30 +307,30 @@ public class GasLaws extends SherlockActivity
 
 			ImageView iconImage = (ImageView) convertView.findViewById(R.id.imageView1);
 			String icon = entry.getIcon();
-			if (icon.equals("boyles"))
+			if (icon.equals(SID_BOYLES))
 				iconImage.setImageResource(R.drawable.boyles_icon);
-			else if (icon.equals("charles"))
+			else if (icon.equals(SID_CHARLES))
 				iconImage.setImageResource(R.drawable.charles_icon);
-			else if (icon.equals("ideal"))
+			else if (icon.equals(SID_IDEAL))
 				iconImage.setImageResource(R.drawable.ideal_icon);
-			else if (icon.equals("gay"))
+			else if (icon.equals(SID_GAY))
 				iconImage.setImageResource(R.drawable.lussac_icon);
-			else if (icon.equals("combined"))
+			else if (icon.equals(SID_COMBINED))
 				iconImage.setImageResource(R.drawable.combined_icon);
 
 			TextView Item = (TextView) convertView.findViewById(R.id.Item);
 			Item.setText(entry.getItemName());
 
 			TextView Description = (TextView) convertView.findViewById(R.id.Description);
-			if(entry.getDescription().equals("P1V1 = P2V2"))
+			if(entry.getDescription().equals(FORMULAS_BOYL_S_P1V1_P2V2))
 				Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>"));
-			else if(entry.getDescription().equals("V1/T1 = V2/T2"))
+			else if(entry.getDescription().equals(FORMULAS_CHARLES_V1_T1_V2_T2))
 				Description.setText(Html.fromHtml("V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
-			else if(entry.getDescription().equals("P1T2 = P2T1"))
+			else if(entry.getDescription().equals(FORMULAS_GAY_LUSSAC_P1T2_P2T1))
 				Description.setText(Html.fromHtml("P<sub><small>1</small></sub>T<sub><small>2</small></sub> = P<sub><small>2</small></sub>T<sub><small>1</small></sub>"));
-			else if(entry.getDescription().equals("PV = nRT"))
-				Description.setText(Html.fromHtml("PV = nRT"));
-			else if(entry.getDescription().equals("P1V1/T1 = P2V2/T2"))
+			else if(entry.getDescription().equals(FORMULAS_IDEAL_GAS_PV_N_RT))
+				Description.setText(Html.fromHtml(FORMULAS_IDEAL_GAS_PV_N_RT));
+			else if(entry.getDescription().equals(FORMUILAS_COMBINED_P1V1_T1_P2V2_T2))
 				Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
 			else
 				Description.setText(entry.getDescription());

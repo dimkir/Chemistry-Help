@@ -15,14 +15,15 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
 
-import gaslaws.BoylesLaw;
-import gaslaws.CharlesLaw;
 import gaslaws.GasLaws;
-import gaslaws.GayLussacsLaw;
-import gaslaws.IdealGasLaw;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import laws.BoylesLaw;
+import laws.CharlesLaw;
+import laws.GayLussacsLaw;
+import laws.IdealGasLaw;
 
 public class Settings extends SherlockActivity
 {
