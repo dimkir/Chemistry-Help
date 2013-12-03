@@ -4,6 +4,9 @@
 
 ChemistryHelp/gen/
 Chemistry\ Help/gen/
+ChemistryHelpTest/gen/
+
+# this one doesn't seem to work way i expect (meaning excluding ALL gen directories at all levels)
 /gen/
 
 *.pydevproject
