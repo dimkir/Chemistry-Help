@@ -1,4 +1,4 @@
-package com.pk.chemhelp;
+package com.pk.chemhelp.gaslaws;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,8 +17,15 @@ import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.pk.chemhelp.ChemistryHelp;
+import com.pk.chemhelp.MySingleton;
+import com.pk.chemhelp.R;
+import com.pk.chemhelp.R.drawable;
+import com.pk.chemhelp.R.id;
+import com.pk.chemhelp.R.layout;
 import com.pk.chemhelp.gaslaws.laws.BoylesLaw;
 import com.pk.chemhelp.gaslaws.laws.CharlesLaw;
+import com.pk.chemhelp.gaslaws.laws.CombinedGasLaw;
 import com.pk.chemhelp.gaslaws.laws.GayLussacsLaw;
 import com.pk.chemhelp.gaslaws.laws.IdealGasLaw;
 
