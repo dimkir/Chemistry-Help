@@ -32,27 +32,27 @@
             </intent-filter>
         </activity>
         <activity
-        	android:name="com.pk.chemhelp.gaslaws.GasLaws"
+        	android:name=".gaslaws.GasLaws"
         	android:label="Gas Laws">
         </activity>
         <activity
-        	android:name="com.pk.chemhelp.gaslaws.laws.BoylesLaw"
+        	android:name=".gaslaws.laws.BoylesLaw"
         	android:label="Boyle's Law">
         </activity>
         <activity
-        	android:name="com.pk.chemhelp.gaslaws.CharlesLaw"       	
+        	android:name=".gaslaws.laws.CharlesLaw"       	
         	android:label="Charles' Law">
         </activity>
         <activity
-        	android:name="com.pk.chemhelp.gaslaws.laws.IdealGasLaw"
+        	android:name=".gaslaws.laws.IdealGasLaw"
         	android:label="Ideal Gas Law">
         </activity>
 		<activity
-			android:name="com.pk.chemhelp.gaslaws.GayLussacsLaw"
+			android:name=".gaslaws.laws.GayLussacsLaw"
 			android:label="Gay Lussac's Law">
 		</activity>
 		<activity
-			android:name=".CombinedGasLaw"
+			android:name=".gaslaws.laws.CombinedGasLaw"
 			android:label="Combined Gas Law">
 		</activity>
         <activity
@@ -108,7 +108,7 @@
         	android:label="Debug">
         </activity>
         <activity
-        	android:name=".NewGasLaws"
+        	android:name="com.pk.chemhelp.gaslaws.NewGasLaws"
         	android:label="New Tablet Test">
         </activity>
     </application>
