@@ -17,6 +17,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.pk.chemhelp.gaslaws.GasLaws;
 import com.pk.chemhelp.gaslaws.laws.BoylesLaw;
 import com.pk.chemhelp.gaslaws.laws.CharlesLaw;
+import com.pk.chemhelp.gaslaws.laws.CombinedGasLaw;
 import com.pk.chemhelp.gaslaws.laws.GayLussacsLaw;
 import com.pk.chemhelp.gaslaws.laws.IdealGasLaw;
 
