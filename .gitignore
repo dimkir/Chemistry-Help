@@ -2,6 +2,8 @@
 ## Eclipse
 #################
 
+Chemistry\ Help/gen/
+
 *.pydevproject
 .project
 .metadata
