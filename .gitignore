@@ -3,6 +3,7 @@
 #################
 
 Chemistry\ Help/gen/
+/gen/
 
 *.pydevproject
 .project
