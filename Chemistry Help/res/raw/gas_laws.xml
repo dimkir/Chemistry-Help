@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<laws>
+    <law>
+        <name>Boyle's law</name>
+        <description>P1V1 = P2V2</description>
+        <descriptionHtml><sub><small>1</small></sub>V<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub></descriptionHtml>
+        <activityclassname>com.pk.chemhelp.gaslaws.laws.BoylesLaw</activityclassname>
+        <iconName>boyles_icon</iconName>
+    </law>
+
+    <law>
+        <name>Charles law</name>
+        <description>V1/T1 = V2/T2</description>
+        <activityclassname>com.pk.chemhelp.gaslaws.laws.CharlesLaw</activityclassname>
+        <iconName>charles_icon</iconName>
+    </law>
+
+    <law>
+        <name>Gay Lussac's Law</name>
+        <description>P1T2 = P2T1</description>
+        <activityclassname>com.pk.chemhelp.gaslaws.laws.GayLussacsLaw</activityclassname>
+        <iconName>lussac_icon</iconName>
+    </law>
+    
+    <law>
+        <name>Ideal law</name>
+        <description>PV = nRT</description>
+        <activityclassname>com.pk.chemhelp.gaslaws.laws.IdealGasLaw</activityclassname>
+        <iconName>ideal_icon</iconName>
+    </law>    
+
+    <law>
+        <name>Combined law</name>
+        <description>P1V1/T1 = P2V2/T2</description>
+        <activityclassname>com.pk.chemhelp.gaslaws.laws.CombinedGasLaw</activityclassname>
+        <iconName>combined_icon</iconName>
+    </law>    
+    
+</laws>
