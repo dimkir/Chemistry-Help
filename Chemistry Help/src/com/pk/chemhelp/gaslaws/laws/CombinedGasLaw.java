@@ -1,4 +1,4 @@
-package com.pk.chemhelp;
+package com.pk.chemhelp.gaslaws.laws;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -18,6 +18,21 @@ import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.SubMenu;
+import com.pk.chemhelp.DataStorage;
+import com.pk.chemhelp.Debug;
+import com.pk.chemhelp.Dialogs;
+import com.pk.chemhelp.ErrorDetection;
+import com.pk.chemhelp.Laws;
+import com.pk.chemhelp.Misc;
+import com.pk.chemhelp.MySingleton;
+import com.pk.chemhelp.R;
+import com.pk.chemhelp.Settings;
+import com.pk.chemhelp.R.array;
+import com.pk.chemhelp.R.drawable;
+import com.pk.chemhelp.R.id;
+import com.pk.chemhelp.R.layout;
+import com.pk.chemhelp.R.menu;
+import com.pk.chemhelp.R.string;
 import com.pk.chemhelp.gaslaws.GasLaws;
 
 public class CombinedGasLaw extends SherlockActivity

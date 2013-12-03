@@ -51,34 +51,43 @@ public class GasLawsAdapter extends BaseAdapter implements OnClickListener
 		}
 
 		ImageView iconImage = (ImageView) convertView.findViewById(R.id.imageView1);
-		String icon = entry.getIcon();
-		if (icon.equals(GasLaws.SID_BOYLES))
-			iconImage.setImageResource(R.drawable.boyles_icon);
-		else if (icon.equals(GasLaws.SID_CHARLES))
-			iconImage.setImageResource(R.drawable.charles_icon);
-		else if (icon.equals(GasLaws.SID_IDEAL))
-			iconImage.setImageResource(R.drawable.ideal_icon);
-		else if (icon.equals(GasLaws.SID_GAY))
-			iconImage.setImageResource(R.drawable.lussac_icon);
-		else if (icon.equals(GasLaws.SID_COMBINED))
-			iconImage.setImageResource(R.drawable.combined_icon);
+		iconImage.setImageResource(entry.getIconId());
+		
+//		String icon = entry.getIcon();
+//		if (icon.equals(GasLaws.SID_BOYLES))
+//			iconImage.setImageResource(R.drawable.boyles_icon);
+//		else if (icon.equals(GasLaws.SID_CHARLES))
+//			iconImage.setImageResource(R.drawable.charles_icon);
+//		else if (icon.equals(GasLaws.SID_IDEAL))
+//			iconImage.setImageResource(R.drawable.ideal_icon);
+//		else if (icon.equals(GasLaws.SID_GAY))
+//			iconImage.setImageResource(R.drawable.lussac_icon);
+//		else if (icon.equals(GasLaws.SID_COMBINED))
+//			iconImage.setImageResource(R.drawable.combined_icon);
 
 		TextView Item = (TextView) convertView.findViewById(R.id.Item);
 		Item.setText(entry.getItemName());
 
 		TextView Description = (TextView) convertView.findViewById(R.id.Description);
-		if(entry.getDescription().equals(GasLaws.FORMULAS_BOYL_S_P1V1_P2V2))
-			Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>"));
-		else if(entry.getDescription().equals(GasLaws.FORMULAS_CHARLES_V1_T1_V2_T2))
-			Description.setText(Html.fromHtml("V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
-		else if(entry.getDescription().equals(GasLaws.FORMULAS_GAY_LUSSAC_P1T2_P2T1))
-			Description.setText(Html.fromHtml("P<sub><small>1</small></sub>T<sub><small>2</small></sub> = P<sub><small>2</small></sub>T<sub><small>1</small></sub>"));
-		else if(entry.getDescription().equals(GasLaws.FORMULAS_IDEAL_GAS_PV_N_RT))
-			Description.setText(Html.fromHtml(GasLaws.FORMULAS_IDEAL_GAS_PV_N_RT));
-		else if(entry.getDescription().equals(GasLaws.FORMUILAS_COMBINED_P1V1_T1_P2V2_T2))
-			Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
-		else
+		if ( entry.getDescriptionHtmlAsSpanned() != null ){
+			Description.setText(entry.getDescriptionHtmlAsSpanned());
+		}
+		else{
 			Description.setText(entry.getDescription());
+		}
+		
+//		if(entry.getDescription().equals(GasLaws.FORMULAS_BOYL_S_P1V1_P2V2))
+//			Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>"));
+//		else if(entry.getDescription().equals(GasLaws.FORMULAS_CHARLES_V1_T1_V2_T2))
+//			Description.setText(Html.fromHtml("V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
+//		else if(entry.getDescription().equals(GasLaws.FORMULAS_GAY_LUSSAC_P1T2_P2T1))
+//			Description.setText(Html.fromHtml("P<sub><small>1</small></sub>T<sub><small>2</small></sub> = P<sub><small>2</small></sub>T<sub><small>1</small></sub>"));
+//		else if(entry.getDescription().equals(GasLaws.FORMULAS_IDEAL_GAS_PV_N_RT))
+//			Description.setText(Html.fromHtml(GasLaws.FORMULAS_IDEAL_GAS_PV_N_RT));
+//		else if(entry.getDescription().equals(GasLaws.FORMUILAS_COMBINED_P1V1_T1_P2V2_T2))
+//			Description.setText(Html.fromHtml("P<sub><small>1</small></sub>V<sub><small>1</small></sub>/T<sub><small>1</small></sub> = P<sub><small>2</small></sub>V<sub><small>2</small></sub>/T<sub><small>2</small></sub>"));
+//		else
+//			Description.setText(entry.getDescription());
 
 		return convertView;
 	}

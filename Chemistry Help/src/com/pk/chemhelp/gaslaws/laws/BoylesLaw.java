@@ -11,7 +11,16 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -28,17 +37,11 @@ import com.pk.chemhelp.Misc;
 import com.pk.chemhelp.MySingleton;
 import com.pk.chemhelp.R;
 import com.pk.chemhelp.Settings;
-import com.pk.chemhelp.R.array;
-import com.pk.chemhelp.R.drawable;
-import com.pk.chemhelp.R.id;
-import com.pk.chemhelp.R.layout;
-import com.pk.chemhelp.R.menu;
-import com.pk.chemhelp.R.string;
 import com.pk.chemhelp.gaslaws.GasConstants;
 import com.pk.chemhelp.gaslaws.GasLaws;
 
 public class BoylesLaw extends SherlockActivity
-implements IGLHead, GasConstants
+implements  GasConstants
 {
 	/* Important Objects for Referencing and Problem Solving */
 	protected DataStorage appState;
@@ -1041,26 +1044,5 @@ implements IGLHead, GasConstants
 		finish();
 	}
 	
-	
-	@Override
-	public String getLawTitle(){
-		return LAWS_BOYLE_S_LAW; 
-	}
-
-	@Override
-	public String getLawDescription() {
-		return FORMULAS_BOYL_S_P1V1_P2V2;
-	}
-
-	@Override
-	public String getLawIconString() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("not implemented, and not clear what it should return");
-	}
-
-	@Override
-	public int getLawIconId() {
-		return R.drawable.boyles_icon;
-	}
 	
 }
